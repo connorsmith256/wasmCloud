@@ -1,7 +1,7 @@
 [io]
-url = "https://github.com/wasmCloud/wasi-io/archive/main.tar.gz"
-sha256 = "0faa1fe936bd3a83812965cfb157fd5aaf2ef0a149685af9539e521ed7ce3d4e"
-sha512 = "3ee02f5c5f0d8581e05e7cc080a2ba6d3f840471fe6a405de5a319a2decaa6a7c0c0d16908f52157b05854c5af0b4b23791f002778bce97e6c5d879709868828"
+url = "https://github.com/WebAssembly/wasi-io/archive/main.tar.gz"
+sha256 = "a47690f7d4dba1683a42897cc65fe813409827d72cc93afe03b127ee81763e13"
+sha512 = "661aa9cf9c67d7d712caccfbb3c317da01b033764892623c8902d9dcfdb67f3088889102b036d3ed19d818a5c2d151247b25d9f6fd145cdf433f325605a5a747"
 deps = ["poll"]
 
 [poll]

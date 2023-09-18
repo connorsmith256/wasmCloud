@@ -19,7 +19,7 @@ use tracing::{instrument, trace};
 use wascap::jwt;
 use wasmtime_wasi::preview2::command::Command;
 use wasmtime_wasi::preview2::pipe::{ClosedInputStream, ClosedOutputStream};
-use wasmtime_wasi::preview2::{self, HostInputStream, HostOutputStream, StreamState};
+use wasmtime_wasi::preview2::{self, HostInputStream, HostOutputStream, IsATTY, StreamState};
 
 mod blobstore;
 mod bus;
@@ -278,10 +278,10 @@ fn instantiate(
     // NOTE: stdio will be added to table by `build()` below
     let mut table = preview2::Table::new();
     let wasi = preview2::WasiCtxBuilder::new()
-        .set_args(&["main.wasm"]) // TODO: Configure argv[0]
-        .set_stdin(stdin.clone())
-        .set_stdout(stdout.clone())
-        .set_stderr(stderr.clone())
+        .args(&["main.wasm"]) // TODO: Configure argv[0]
+        .stdin(stdin.clone(), IsATTY::No)
+        .stdout(stdout.clone(), IsATTY::No)
+        .stderr(stderr.clone(), IsATTY::No)
         .build(&mut table)
         .context("failed to build WASI")?;
     let handler = handler.into();
@@ -488,22 +488,26 @@ impl GuestBindings {
         request: impl AsyncRead + Send + Sync + Unpin + 'static,
         response: impl AsyncWrite + Send + Sync + Unpin + 'static,
     ) -> anyhow::Result<Result<(), String>> {
+        tracing::warn!("================= call me maybe");
         let ctx = store.data_mut();
         ctx.stdin.replace(Box::new(request)).await;
         ctx.stdout.replace(Box::new(response)).await;
+        // drop(ctx);
         let res = match self {
             GuestBindings::Command(bindings) => {
                 let operation = operation.as_ref();
                 let wasi = preview2::WasiCtxBuilder::new()
-                    .set_args(&["main.wasm", operation]) // TODO: Configure argv[0]
-                    .set_stdin(ctx.stdin.clone())
-                    .set_stdout(ctx.stdout.clone())
-                    .set_stderr(ctx.stderr.clone())
+                    .args(&["main.wasm", operation]) // TODO: Configure argv[0]
+                    .stdin(ctx.stdin.clone(), IsATTY::No)
+                    .stdout(ctx.stdout.clone(), IsATTY::No)
+                    .stderr(ctx.stderr.clone(), IsATTY::No)
                     .build(&mut ctx.table)
                     .context("failed to build WASI")?;
                 let wasi = replace(&mut ctx.wasi, wasi);
+                drop(ctx);
                 trace!(operation, "call `wasi:command/command.run`");
                 let res = bindings
+                    .wasi_cli_run()
                     .call_run(&mut store)
                     .await
                     .context("failed to call `wasi:command/command.run`")?

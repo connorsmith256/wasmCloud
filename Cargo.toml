@@ -129,7 +129,7 @@ ulid = { version = "1", default-features = false }
 url = { version = "2", default-features = false }
 uuid = { version = "1", default-features = false }
 wascap = { version = "0.11", default-features = false }
-wasi-common = { version = "12", default-features = false }
+wasi-common = { git = "https://github.com/bytecodealliance/wasmtime.git", branch = "main", default-features = false }
 wasmcloud-actor = { version = "*", path = "./crates/actor" }
 wasmcloud-actor-derive = { version = "*", path = "./crates/actor/derive" }
 wasmcloud-compat = { version = "*", path = "./crates/compat" }
@@ -141,9 +141,9 @@ wasmcloud-provider-wit-bindgen = { version = "*", path = "./crates/provider-wit-
 wasmcloud-runtime = { version = "*", path = "./crates/runtime" }
 wasmcloud-tracing = { version = "*", path = "./crates/tracing" }
 wasmparser = { version = "0.112", default-features = false }
-wasmtime = { version = "12", default-features = false }
-wasmtime-wasi = { version = "12", default-features = false }
-wasmtime-wit-bindgen = { version = "11", default-features = false }
+wasmtime = { git = "https://github.com/bytecodealliance/wasmtime.git", branch = "main", default-features = false }
+wasmtime-wasi = { git = "https://github.com/bytecodealliance/wasmtime.git", branch = "main", default-features = false }
+wasmtime-wit-bindgen = { git = "https://github.com/bytecodealliance/wasmtime.git", default-features = false }
 wit-bindgen = { version = "0.11", default-features = false }
 wit-component = { version = "0.14", default-features = false }
 wit-parser = { version = "0.8", default-features = false }

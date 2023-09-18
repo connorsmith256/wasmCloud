@@ -306,10 +306,10 @@ impl types::Host for Ctx {
     }
 
     #[instrument]
-    async fn outgoing_value_write_body(
+    async fn outgoing_value_write_body_async(
         &mut self,
         outgoing_value: types::OutgoingValue,
-    ) -> anyhow::Result<Result<types::OutputStream, ()>> {
+    ) -> anyhow::Result<Result<types::OutputStream, u32>> {
         let stream = self
             .table
             .get_outgoing_value(outgoing_value)
@@ -320,6 +320,24 @@ impl types::Host for Ctx {
             .push_output_stream(Box::new(AsyncStream(stream)))
             .context("failed to push output stream")?;
         Ok(Ok(stream))
+    }
+
+    #[instrument]
+    async fn outgoing_value_write_body_sync(
+        &mut self,
+        outgoing_value: types::OutgoingValue,
+        value: Vec<u8>,
+    ) -> anyhow::Result<Result<(), u32>> {
+        let stream = self
+            .table
+            .get_outgoing_value(outgoing_value)
+            .context("failed to get outgoing value")?
+            .clone();
+        let stream = self
+            .table
+            .push_output_stream(Box::new(AsyncStream(stream)))
+            .context("failed to push output stream")?;
+        Ok(Ok(()))
     }
 
     #[instrument]

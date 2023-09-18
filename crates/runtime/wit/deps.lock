@@ -22,14 +22,14 @@ sha512 = "f98a17c19c17bcc55e5b3ae296b46c96a5a2bd59404db821d649b4c763da7a49a6e8a6
 deps = ["cli", "clocks", "filesystem", "random", "sockets"]
 
 [io]
-path = "../../../wit/deps/io"
-sha256 = "0faa1fe936bd3a83812965cfb157fd5aaf2ef0a149685af9539e521ed7ce3d4e"
-sha512 = "3ee02f5c5f0d8581e05e7cc080a2ba6d3f840471fe6a405de5a319a2decaa6a7c0c0d16908f52157b05854c5af0b4b23791f002778bce97e6c5d879709868828"
+url = "https://github.com/WebAssembly/wasi-io/archive/main.tar.gz"
+sha256 = "a47690f7d4dba1683a42897cc65fe813409827d72cc93afe03b127ee81763e13"
+sha512 = "661aa9cf9c67d7d712caccfbb3c317da01b033764892623c8902d9dcfdb67f3088889102b036d3ed19d818a5c2d151247b25d9f6fd145cdf433f325605a5a747"
 
 [keyvalue]
 url = "https://github.com/WebAssembly/wasi-keyvalue/archive/main.tar.gz"
-sha256 = "cbe6f5c0b0bd0dd382fe91a14dc83f42545463bc7a1f14e13d3c500896ef2214"
-sha512 = "ed54e12d87144c38ea941cda0ea28dff6cff2334a7fba48215e95163c9ccce9d922e22604d84b0742b7c6c848174bbf946eec2db9e212fd5cce16fab13534a26"
+sha256 = "d60f802ce2f6b68b796de0601b997aa5d113473f6206aea2d73b1e6ff33b4801"
+sha512 = "6ed37b8adb6c0485ea9caabf8b2192c27c8f9f56b0fad1070e74ce7791e383abc59b4b952172f31b1f909f4d8330874a13ca3532262c4f0517e6dfec353e0628"
 
 [logging]
 url = "https://github.com/WebAssembly/wasi-logging/archive/main.tar.gz"
