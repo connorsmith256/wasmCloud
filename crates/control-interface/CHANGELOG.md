@@ -29,6 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 <csr-id-f8c2d51f1b049e2035ea0d5df096a129482da7e4/>
 <csr-id-ae3c37c61b20c38abbf8e09b37c546dd1db4db42/>
 <csr-id-859b0baeff818a1af7e1824cbb80510669bdc976/>
+<csr-id-90d7c48a46e112ab884d9836bfc25c1de5570fee/>
 
 ### Chore
 
@@ -40,6 +41,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
  - <csr-id-723ae50ea0eff41875f65622ba72cf2c4f53489f/> address clippy warnings
  - <csr-id-18791e7666b4de2526628e2a973c47b7f51d9481/> integrate `control-interface` into the workspace
  - <csr-id-84fc7a928697c8fc9c6a03e94ed2053783577a4f/> add 'crates/control-interface/' from commit 'cea335729f3bf368178cc6b8745478bdd01c54b5'
+
+### New Features (BREAKING)
+
+ - <csr-id-e8f951973bb671a2568891c4f606a2c71e545b50/> a breaking change
 
 ### Chore
 
@@ -96,9 +101,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <csr-read-only-do-not-edit/>
 
- - 28 commits contributed to the release over the course of 53 calendar days.
- - 974 days passed between releases.
- - 27 commits were understood as [conventional](https://www.conventionalcommits.org).
+ - 1 commit contributed to the release.
+ - 1 commit was understood as [conventional](https://www.conventionalcommits.org).
  - 0 issues like '(#ID)' were seen in commit messages
 
 ### Commit Details
@@ -108,34 +112,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 <details><summary>view details</summary>
 
  * **Uncategorized**
-    - A new feature ([`1499ab7`](https://github.com/connorsmith256/wasmcloud/commit/1499ab7114e0425e5260f26b68a569532fbf02b3))
-    - Add changelogs for wash ([`90d7c48`](https://github.com/connorsmith256/wasmcloud/commit/90d7c48a46e112ab884d9836bfc25c1de5570fee))
-    - Add changelogs for host ([`859b0ba`](https://github.com/connorsmith256/wasmcloud/commit/859b0baeff818a1af7e1824cbb80510669bdc976))
-    - Bump to 0.32.1 ([`39d4de5`](https://github.com/connorsmith256/wasmcloud/commit/39d4de57e25af8cb4686d53410037c1cc93027ba))
-    - Remove deprecated code related to start actor cmd ([`7de3182`](https://github.com/connorsmith256/wasmcloud/commit/7de31820034c4b70ab6edc772713e64aafe294a9))
-    - Update parsing from RegistryCredential to RegistryAuth ([`65d2e28`](https://github.com/connorsmith256/wasmcloud/commit/65d2e28d54929b8f4d0b39077ee82ddad2387c8e))
-    - Revised implementation of registry url and credentials resolution ([`57d014f`](https://github.com/connorsmith256/wasmcloud/commit/57d014fb7fe11542d2e64068ba86e42a19f64f98))
-    - Some cleanup before revised implementation ([`4e9bae3`](https://github.com/connorsmith256/wasmcloud/commit/4e9bae34fe95ecaffbc81fd452bf29746b4e5856))
-    - Add event name as suffix on event topic ([`6994a22`](https://github.com/connorsmith256/wasmcloud/commit/6994a2202f856da93d0fe50e40c8e72dd3b7d9e6))
-    - Rename label to key ([`bdb72ee`](https://github.com/connorsmith256/wasmcloud/commit/bdb72eed8778a5d8c59d0b8939f147c374cb671f))
-    - Enable updating host labels via the control interface ([`85cb573`](https://github.com/connorsmith256/wasmcloud/commit/85cb573d29c75eae4fdaca14be808131383ca3cd))
-    - Adds support for actor config ([`1a048a7`](https://github.com/connorsmith256/wasmcloud/commit/1a048a71320dbbf58f331e7e958f4b1cd5ed4537))
-    - V0.32.0 ([`a61723a`](https://github.com/connorsmith256/wasmcloud/commit/a61723a12a298f10e28eb7464a2bb623b5cfe244))
-    - Update `wasmcloud-control-interface` ([`17db669`](https://github.com/connorsmith256/wasmcloud/commit/17db669d79e242144eeffbd8d2ac2b1ae9edeb35))
-    - Reverting back to simple util method call for identifier verification ([`d3e6269`](https://github.com/connorsmith256/wasmcloud/commit/d3e6269dc1441b21d4c06d7620e9e7c6d839e211))
-    - Remove initial test function. ([`ae3c37c`](https://github.com/connorsmith256/wasmcloud/commit/ae3c37c61b20c38abbf8e09b37c546dd1db4db42))
-    - Trying out "nominal typing" for validating identifiers. Only HostId implemented. ([`413410b`](https://github.com/connorsmith256/wasmcloud/commit/413410bad26d148aeda28b6403add7842570efac))
-    - Validate identifier inputs ([`f8846e0`](https://github.com/connorsmith256/wasmcloud/commit/f8846e022a49d4c9158250af1ab9ae6661bceaf0))
-    - Remove support for bindle references ([`5301084`](https://github.com/connorsmith256/wasmcloud/commit/5301084bde0db0c65811aa30c48de2a63e091fcf))
-    - Fix lint ([`f43d882`](https://github.com/connorsmith256/wasmcloud/commit/f43d88283ddc17ed81b1f95bf64b5985bda70fd3))
-    - Simplify `collect_sub_timeout` ([`79a8f1b`](https://github.com/connorsmith256/wasmcloud/commit/79a8f1b03a63a4b5a5295cdf86ef69780bade052))
-    - Remove `sub_stream` module ([`b604a8c`](https://github.com/connorsmith256/wasmcloud/commit/b604a8c7a5f1c9d3b417a178d68d90104d817b3a))
-    - Address clippy warnings ([`723ae50`](https://github.com/connorsmith256/wasmcloud/commit/723ae50ea0eff41875f65622ba72cf2c4f53489f))
-    - Remove unused `HeaderInjector` ([`98a5952`](https://github.com/connorsmith256/wasmcloud/commit/98a59529e451214d61acdffe4703552a5f4a231a))
-    - Clean-up imports ([`f8c2d51`](https://github.com/connorsmith256/wasmcloud/commit/f8c2d51f1b049e2035ea0d5df096a129482da7e4))
-    - Merge pull request #927 from rvolosatovs/merge/control-interface ([`5d40fcb`](https://github.com/connorsmith256/wasmcloud/commit/5d40fcb06f4a029cca05f0d5b5f8c12722553822))
-    - Integrate `control-interface` into the workspace ([`18791e7`](https://github.com/connorsmith256/wasmcloud/commit/18791e7666b4de2526628e2a973c47b7f51d9481))
-    - Add 'crates/control-interface/' from commit 'cea335729f3bf368178cc6b8745478bdd01c54b5' ([`84fc7a9`](https://github.com/connorsmith256/wasmcloud/commit/84fc7a928697c8fc9c6a03e94ed2053783577a4f))
+    - A breaking change ([`e8f9519`](https://github.com/connorsmith256/wasmcloud/commit/e8f951973bb671a2568891c4f606a2c71e545b50))
 </details>
 
 ## v0.3.1 (2021-04-29)
